@@ -11,7 +11,7 @@ Currenly have raw tdc data bank **[RAW::TDC]** because I have not implemented RI
 | edge[0:1] [1bit]
 | TDC [15bit]
 
-### Future (final?) data structure format
+### Future (final?) data structure format for decoded data
 
 | raw EVIO | decoded HIPO ||
 |----------|--------------|---|
@@ -21,3 +21,17 @@ Currenly have raw tdc data bank **[RAW::TDC]** because I have not implemented RI
 | channel[0:191] [8bit] | order [8bit] | `order=edge`, 2 possible values LEADING/TRAILING
 | edge[0:1] [1bit] | TDC [32bit] | for RICH data only 15 bits are effectively occupied
 | TDC [15bit]
+
+After decoding HIPO is fed to the reconstruction suite which produces/utilizes reconstructtion-level HIPO banks that detector groups are free to design for their purposes
+
+### Simulation data structure format
+
+| gemc EVIO | reconstruction level HIPO ||
+|----------|--------------|---|
+| crate[84] | sector [8bit] | slots [3:7] are assigned to sector 2
+| slot[3:7] [8bit] | layer [8bit] | `layer=board`, `[115 3xMAROC]+[23 2xMAROC]=138 boards` fit into 8bit word
+| fiber[0:31] [8bit] | component [16bit] | `component=MAROC channel`, 192 or 128 channels fit into 16 bit word
+| channel[0:191] [8bit] | order [8bit] | `order=edge`, 2 possible values LEADING/TRAILING
+| edge[0:1] [1bit] | TDC [32bit] | for RICH data only 15 bits are effectively occupied
+| TDC [15bit]
+
