@@ -28,6 +28,6 @@ After decoding HIPO is fed to the reconstruction suite which produces/utilizes r
 
 | gemc EVIO | reconstruction level HIPO |
 |---|---|
-| sector[1:6] [32bit] | sector[1:6] [32bit] | 
-| pmt[1:391] [32bit] | pmt[1:391] [32bit] | 
-| pixel[1:64] [32bit] | pixel[1:64] [32bit] | 
+| sector[1:6] [32bit] | sector[1:6] [8bit] | 
+| pmt[1:391] [32bit] | pmt[1:391] [16bit] | 
+| pixel[1:64] [32bit] | pixel[1:64] [16bit] | 
