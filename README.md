@@ -1,6 +1,6 @@
 # RICHdocs
 ### Current data structure format
-Currenly have raw tdc data bank **[RAW::TDC]** because I have not implemented RICH mapping and translation tables yet:
+Currenly have raw tdc data bank **[RAW::TDC]** because I have not implemented RICH mapping and translation tables yet. We **won't** have [RAW::TDC] after the translation is implemented.
 
 | raw EVIO | RAW::TDC ||
 |----------|--------------|---|
